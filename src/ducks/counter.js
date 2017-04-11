@@ -17,7 +17,7 @@ export function increment(amount) {
 export default function counter (state=initialState, action) {
    switch(action.type) {
       case INCREMENT:
-         const newValue = state.currentValue + amount;
+         const newValue = state.currentValue + action.amount;
          return Object.assign({}, state, {currentValue: newValue})
       case DECREMENT: 
          return {currentValue: state.currentValue - action.amount}
