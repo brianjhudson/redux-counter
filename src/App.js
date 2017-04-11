@@ -1,8 +1,15 @@
 import React, { Component } from "react";
-
+import {connect} from 'react-redux';
 import "./App.css";
 
 export class App extends Component {
+	componentWillMount() {
+		console.log(this.props)
+	}
+	componentWillReceiveProps(nextProps) {
+		console.log(this.props)
+		console.log(nextProps)
+	}
 	render() {
 		return (
 			<div className="app">
@@ -60,4 +67,7 @@ export class App extends Component {
 	}
 }
 
-export default App;
+function mapStateToProps(state) {
+	return state
+}
+export default connect(mapStateToProps)(App);
